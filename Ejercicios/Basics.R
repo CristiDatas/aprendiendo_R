@@ -103,7 +103,7 @@ barplot(t)
 dff <- data.frame(Nombre=c("Cristina","Catalina","Cristino", "Catalino","Lechuguino"), Sexo=c("M","M","H","H","H"), Edad=c(47,24,64,56,18), Puesto=c("CEO","Portera","Secretario","Administrativo","Becario"))
 print(dff)
 
-#☺26. Write a R program to create a Data Frames which contain details of 5 employees and display summary of the data.
+#26. Write a R program to create a Data Frames which contain details of 5 employees and display summary of the data.
 
 summary(dff)
 
