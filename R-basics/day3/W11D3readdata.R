@@ -1,5 +1,7 @@
 # WEEK 11 - day 3 Read data
 
+library(tidyverse)
+
 #############
 # Read data #
 #############
@@ -19,7 +21,7 @@ ruta_csv <- "C:\\Users\\clara\\Desktop\\R-basics\\day3\\data\\alumnos.csv"
 
 getwd() # ¿Cual es mi working directory?
 
-setwd("C:\\Users\\clara\\Desktop") # Cambio mi working directory
+setwd("C:\\Users\\clara\\Downloads") # Cambio mi working directory
 
 getwd()
 
@@ -28,7 +30,6 @@ setwd("C:\\Users\\clara\\Desktop\\R-basics\\day3")
 getwd()
 
 # leer los datos
-
 datos <- read.csv("data/alumnos.csv", header = TRUE, sep = ",")
 datos
 
@@ -45,6 +46,11 @@ datos
 
 # por defecto, separate() separa tomando como separador aquello que usando 
 # REGEX haga match con cualquier valor que no sea alfanumerico 
+dfc_read <- read.csv("data/alumnos.csv", header = TRUE, sep = ",") %>% 
+  separate(nombre, into = c("Apellido", "Nombre")) %>% 
+  separate(fecha, into = c("Dia", "Mes", "Año"), convert = TRUE) %>% 
+  gather(Materia, Puntos, matematica, ingles) 
+
 dfc <- datos %>% 
   separate(nombre, into = c("Apellido", "Nombre")) %>% 
   separate(fecha, into = c("Dia", "Mes", "Año"), convert = TRUE) %>% 
